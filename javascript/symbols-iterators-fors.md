@@ -7,7 +7,7 @@ var isCool = Symbol();
 // this doesn't work: var isCool = new Symbol();
 ```
 
-Symbols are always unique so it's okay to use them to extend objects without worrying about
+Symbols are always unique so it's okay to use them to extend objects without worrying about naming conflicts.
 
 Many JS types are already decorated with symbols.
 `Symbol.iterator` specifies the default iterator for an object. Assigning it to an object allows the use of `for...of`

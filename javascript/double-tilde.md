@@ -1,6 +1,3 @@
-<!-- TITLE: Double Tilde -->
-<!-- SUBTITLE: A quick summary of Double Tilde -->
-
 # `~~` bit trick
 
 `~~x` is the same as
@@ -19,5 +16,3 @@ It removes everything after the decimal point because the bitwise operators impl
 Works whether the operands are (floating-point) numbers or strings, and the result is a number.
 
 Requires `x` is between -(2^31) and 2^(31 - 1). Otherwise, overflow will occur and the number will "wrap around".
-
-

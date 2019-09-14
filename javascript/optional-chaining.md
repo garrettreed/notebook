@@ -19,3 +19,5 @@ var nest = {
 
 optChain(nest, "a", "b");
 ```
+
+Future Sytnax: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining

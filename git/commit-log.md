@@ -6,14 +6,15 @@ A very dumb script to use as a global `post-commit`. Should probably use `-C` fl
 #!/bin/sh
 
 function append {
-    cd ~/.git-commit-log
+    DOSSIER_COMMIT=$(git log --format="$(basename "$PWD"), %H, %ai, %s" -1)
+    cd ~/Code/dossier
 
     git pull --rebase && \
     cd - && \
-    echo $(basename "$PWD") $(git log -1) >> ~/.git-commit-log/commits && \
-    cd ~/.git-commit-log && \
+    echo $DOSSIER_COMMIT >> ~/Code/dossier/commits && \
+    cd ~/Code/dossier && \
     git add -A && \
-    git commit -m 'Commit' && \
+    git commit -m "$DOSSIER_COMMIT" && \
     git push
 
     cd -

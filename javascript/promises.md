@@ -114,6 +114,14 @@ somePromise()
         });
     ```
 
+## Finally
+
+-   You can always just add a `.then()` after a `.catch()`, but it won't run if the `.catch()` block also happens to throw an error. You can be safe by using `.finally()`, which will be called regardless.
+-   You can also technically sprinkle `.finally()` blocks liberally throughout your promise chain. It won't affect the chain. It'll just be confusing.
+-   Has no reference to the promise. Callback will not receive a value. This makes another `.then()` your only option if you need the resolved or rejected value.
+-   I only ever use these to disable loading spinners, but cleaning up event listeners is also a likely use case.
+-   _Is_ part of the promise spec. I initially thought this was bluebird only. I was wrong. It's official.
+
 ## Implementation
 
 [Implementing Promises](https://www.promisejs.org/implementing/)

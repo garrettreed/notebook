@@ -9,5 +9,5 @@
 ## Version 2
 
 -   `git add -A` and `git add .` are the same
--   `git add --ginore-removal .` acts as `git add .` from version 1
+-   `git add --ignore-removal .` acts as `git add .` from version 1
 -   `git add -u` same as version 1

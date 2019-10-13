@@ -1,19 +1,28 @@
 # Currying in JS
 
 Functional transformation allowing for filling a function's arguments step-by-step.
+A partial application may or may not have a predictable return type.
+A curried function always returns another function with an arity of 1 until all of the arguments have been applied.
 
 ### Implementation
 
 ```js
 function curry(fn) {
-    var slice = Array.prototype.slice;
-    var arg_store = slice.call(arguments, 1); // array containing all but the first arg
+    var args = Array.prototype.slice.call(arguments, 1); // array containing all but the first arg
     return function() {
-        var arg_new = slice.call(arguments); // array containing all args
-        var arg = arg_store.concat(arg_new);
-        return fn.apply(null, arg);
+        return fn.apply(this, args.concat(Array.prototype.slice.call(arguments, 0))); // array containing all args
     };
 }
+
+function add3(a, b, c) {
+    console.log(a + b + c);
+}
+
+var step1 = curry(add3, 1);
+var step2 = curry(step1, 2);
+var step3 = curry(step2, 3);
+
+step3(); // 6
 ```
 
 ### Quadratic Equation Example

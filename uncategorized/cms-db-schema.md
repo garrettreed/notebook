@@ -1,6 +1,6 @@
 # CMS DB schema
 
-Update: After a lil bit of research I see that I implemented an EAV data model. Actually, one that mimics Magento's, sans "Flat" table. Cool. Moving the Object ID from the Field to the Value tables should allow for sharing fields between objects, but I bet it violates some normalization form. I'll think on it.
+Update: After a lil bit of research I now know that this is just the [EAV model](https://en.wikipedia.org/wiki/Entity%E2%80%93attribute%E2%80%93value_model). Actually, one that mimics Magento's, sans "Flat" table. Cool. Moving the Object ID from the Field to the Value tables should allow for sharing fields between objects, but I bet it violates some normalization form. I'll think on it.
 
 Problem this is addressing: Duplicating schema logic in database and application. Also flexibility.
 

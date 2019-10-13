@@ -1,6 +1,6 @@
 # `bind`
 
--   Set which specific object will be bound to `this` when a function is invoked
+Set which specific object will be bound to `this` when a function is invoked
 
 ## Syntax
 
@@ -39,6 +39,7 @@ function sayColors(a, b, c) {
     console.log(a, b, c);
 }
 sayColors.bind(null, "blue")("red"); // blue red undefined
+sayColors.bind(null, "blue").bind(null, "red")("green");
 ```
 
 ## Currying (or Partial Function Application)
@@ -58,4 +59,19 @@ greetAnAdultMale("John Hartlove"); // 'Hello, Mr. John Hartlove.'
 var greetAYoungster = greet.bind(null, "", 16);
 greetAYoungster("Alex"); // 'Hey, Alex.'
 greetAYoungster("Emma Waterloo"); // 'Hey, Emma Waterloo.'
+```
+
+## Definition
+
+Very similar to curry
+
+```js
+Function.prototype.bind = function() {
+    var fn = this,
+        args = Array.prototype.slice.call(arguments);
+    var object = args.shift();
+    return function() {
+        return fn.apply(object, args.concat(Array.prototype.slice.call(arguments)));
+    };
+};
 ```

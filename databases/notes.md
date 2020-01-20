@@ -135,3 +135,8 @@ postal_code   city
 
 -   Keep track of a particular column or attribute
 -   Makes reads faster but writes slower
+
+## OTLP vs OLAP
+
+-   OLTP (On-line Transaction Processing): The transactional database (INSERT, UPDATE, DELETE). Built to handle fast processing, but is rigid and deriving meaning can take a lot of work.
+-   OLAP (On-line Analytical Processing): Takes the archive of the transactions and build aggregations to support complex queries. These queries are infrequent compared to OTLP, and rarely need to be realtime. Multi dimensional schemas are common, usually a star schema. Supports data mining, analytics, and decision making as the data warehouse.

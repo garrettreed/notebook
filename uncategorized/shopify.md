@@ -6,11 +6,11 @@ Slate wins for live reloading, and modern starter themes.
 
 > Slate is a bunch of tooling built on top of Themekit. Themekit is more just a client with the themes API, letting you use whichever tools you need on top. Slate has an opinionated set of tools that Shopify uses to develop its own themes.
 
-Chosing Theme Kit custom solution for:
+Theme Kit wins overall because:
 
 1. Can’t convert an existing theme into a slate project without translating it to match the structure
 2. Can’t easily reconcile changes from remote
-3. Unpredictable behavior when multiple people are working on theme (theme kit just stops you until changes are reconciled)
+3. ~~Unpredictable behavior when multiple people are working on theme (theme kit just stops you until changes are reconciled)~~ Theme Kit removed their asset manifest so it also overwrites things.
 4. Slate is not actively developed/supported (edited)
 
 ## Starter theme

@@ -11,10 +11,10 @@ var myCar = new Car("blue");
 
 When `new Car()` is called, 4 things happen:
 
-1. New object is created
-2. `constructor` of object is set to type `Car`
-3. Object's prototype is set to Car's prototype
-4. `Vehicle()` is called from the context of the new object
+1. A new object is created that inherits from `Car.prototype` (`myCar.__proto__ === Car.prototype`)
+2. `constructor` of new object is set to `Car`
+3. Calls the constructor function with object as context (`this`).
+4. Implictly returns `this`
 
 Instead of `new`, you could do the following:
 

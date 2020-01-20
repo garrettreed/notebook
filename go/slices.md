@@ -40,7 +40,7 @@ func main() {
     l = s[2:]                               // slices up from, including s[2]
     fmt.Println("sl3", l)
 
-    t := []string{"g", "h", "i"}            // declare and init in single line
+    t := []string{"g", "h", "i"}            // slice literal
     fmt.Println("dcl:",t)
 
     twoD := make([][]int, 3)                // multi-dimensional slices can have varying inner slice lengths
@@ -52,5 +52,24 @@ func main() {
         }
     }
     fmt.Println("2d", twoD)
+
+    // Slices reference their underlying array
+    // Changing elements of a slice modifies those elements.
+    // Slices that share the same underlying array will share changes.
+    names := [4]string{
+		"John",
+		"Paul",
+		"George",
+		"Ringo",
+	}
+	fmt.Println(names)
+
+	a := names[0:2]
+	b := names[1:3]
+	fmt.Println(a, b)
+
+	b[0] = "XXX"
+	fmt.Println(a, b)
+	fmt.Println(names)
 }
 ```

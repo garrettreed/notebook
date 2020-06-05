@@ -2,6 +2,8 @@
 
 ## Throwing Things
 
+The `throw` statement halts execution fo the current funtion and control will be passed to the first `catch` block in the call state. If no such block exists, the program will terminate.
+
 You can `throw` anything. These are all valid
 
 -   `throw new Error("something went wrong");`

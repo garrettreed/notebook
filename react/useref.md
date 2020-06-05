@@ -27,7 +27,7 @@ function MyComponent(props) {
     var elem = React.useRef();
     [thing, setThing] = React.useState(1);
 
-    React.useEffect(function() {
+    React.useEffect(function () {
         console.log("in use effect");
         console.log(elem.current);
         elem.current.focus(); // force focus when mounted
@@ -45,4 +45,22 @@ function MyComponent(props) {
 }
 
 ReactDOM.render(React.createElement(MyComponent), document.getElementById("app"));
+```
+
+## `forwardRef`
+
+I haven't found a good use case for this, since you can just pass a custom ref prop instead. Could be useful for higher order components. https://stackoverflow.com/questions/58578570/value-of-using-react-forwardref-vs-custom-ref-prop.
+
+Here's the react example:
+
+```js
+const FancyButton = React.forwardRef((props, ref) => (
+    <button ref={ref} className="FancyButton">
+        {props.children}
+    </button>
+));
+
+// You can now get a ref directly to the DOM button:
+const ref = React.createRef();
+<FancyButton ref={ref}>Click me!</FancyButton>;
 ```

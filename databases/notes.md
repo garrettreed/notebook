@@ -37,7 +37,7 @@
 ### 1NF
 
 -   The information is stored in a relational table with primary key.
--   Each column contains only atomic values.
+-   Each column contains only atomic (incapable of being divided) values.
 -   No repeating groups of columns.
 -   Atomic value: Value that cannot be divided
 
